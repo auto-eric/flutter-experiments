@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 import 'navigation.dart';
 
-const title = 'Settings';
+const title = 'Routes';
 
-class SettingsPage extends StatelessWidget {
-  const SettingsPage({super.key});
+class RoutesPage extends StatelessWidget {
+  const RoutesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Row(
-          children: const [Icon(Icons.settings), Text(title)],
+          children: const [Icon(Icons.route), Text(title)],
         ),
       ),
       drawer: const Navigation(),
