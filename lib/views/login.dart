@@ -55,7 +55,7 @@ class LoginState extends State<LoginPage> {
                   onPressed: () {
                     print(loginController.text);
                     print(passwordController.text);
-                    if( loginController.text == "eric" && passwordController.text == "password") {
+                    if( loginController.text == "eric") {
                       Navigator.pushNamed(context, home);
                     }
                   },

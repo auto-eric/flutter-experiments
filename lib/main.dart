@@ -1,6 +1,4 @@
 import 'package:erics_app/route/route.dart';
-import 'package:erics_app/views/nav_rail_example.dart';
-import 'package:erics_app/views/navigation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,10 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const NavRailExample(),
       onGenerateRoute: controller,
       initialRoute: login,
     );
   }
 }
-
