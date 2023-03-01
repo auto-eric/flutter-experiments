@@ -1,8 +1,9 @@
+import 'package:erics_app/application_state.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Navigation extends StatelessWidget {
   const Navigation({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -10,9 +11,13 @@ class Navigation extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          const UserAccountsDrawerHeader(
-              accountName: Text("to-be-named"),
-              accountEmail: Text("unknown"),
+          Consumer<ApplicationState>(
+            builder: (context, state, child){
+              return UserAccountsDrawerHeader(
+                accountName: Text('login: ${state.login}'),
+                accountEmail: Text('email: ${state.email}'),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(Icons.home),

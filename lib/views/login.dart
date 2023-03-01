@@ -1,5 +1,7 @@
+import 'package:erics_app/application_state.dart';
 import 'package:erics_app/route/route.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, required this.title});
@@ -53,9 +55,13 @@ class LoginState extends State<LoginPage> {
                 child: ElevatedButton(
                   child: const Text('Login'),
                   onPressed: () {
-                    print(loginController.text);
+                    var login = loginController.text;
+                    print(login);
                     print(passwordController.text);
-                    if( loginController.text == "eric") {
+
+                    if (login == "eric") {
+                      var appState = context.read<ApplicationState>();
+                      appState.login = login;
                       Navigator.pushNamed(context, home);
                     }
                   },
